@@ -130,8 +130,6 @@ const get_sii_credentials = rut => {
     })
 }
 
-const delay = ms => { return new Promise(resolve => { setTimeout(resolve, ms) }) }
-
 async function waitForEvent(page, event, timeout = 35000) {
     return Promise.race([
         page.evaluate(
