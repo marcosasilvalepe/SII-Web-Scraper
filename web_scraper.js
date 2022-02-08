@@ -170,21 +170,6 @@ const go_to_sii = () => {
             ]);
     
             console.log('Usuario y Clave ingresado correctamente. Ingresando datos encabezado...\r\n');
-
-            //HUERTOS DEL MAITEN SELECT
-            if (global.document.Entidad_Interna.RUT === '77.114.753-4') {
-                
-                await page.waitForSelector('select.form-control[name="RUT_EMP"]');
-
-                await page.select('select.form-control[name="RUT_EMP"]', global.document.Entidad_Interna.RUT.replace(/[.]/gm, ''));
-                await page.click('.btn.btn-default.btn-sm[type="submit"]');
-
-                await page.waitForNavigation({ 
-                    waitUntil: 'networkidle2', 
-                    timeout: 45000 
-                });
-
-            }
             
             //CONSTITUTES SALE SELECT
             if (!global.document.Constituye_Venta) await page.select('#collapseEMISOR select[name="EFXP_IND_VENTA"]', '6');
